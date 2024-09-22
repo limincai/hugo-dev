@@ -1,168 +1,333 @@
-+++
-author = "Hugo Authors"
-title = "Markdown Syntax Guide"
-date = "2019-03-11"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
-tags = [
-    "markdown",
-    "css",
-    "html",
-    "themes",
-]
-categories = [
-    "themes",
-    "syntax",
-]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-image = "pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
-+++
+---
+title: "Markdown 语法"
+description: "Markdown 基础语法，快速入门。"
+tags: ["markdown"]
+date: 2024-09-22T20:11:03+08:00
+image: "markdownsyntax-corver.png"
+hidden: false
+draft: true
+---
 
-This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
-<!--more-->
+## 标题
 
-## Headings
+`# 内容`为标题，几个#代表几级标题。
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+# 一级标题
 
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+## 二级标题
 
-## Paragraph
+### 三级标题
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+```markdown
+# 一级标题
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+## 二级标题
 
-## Blockquotes
-
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
-
-#### Blockquote without attribution
-
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use *Markdown syntax* within a blockquote.
-
-#### Blockquote with attribution
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-## Tables
-
-Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
-
-   Name | Age
---------|------
-    Bob | 27
-  Alice | 23
-
-#### Inline Markdown within tables
-
-| Italics   | Bold     | Code   |
-| --------  | -------- | ------ |
-| *italics* | **bold** | `code` |
-
-| A                                                        | B                                                                                                             | C                                                                                                                                    | D                                                 | E                                                          | F                                                                    |
-|----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------|
-| Lorem ipsum dolor sit amet, consectetur adipiscing elit. | Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex. | Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus | Proin sit amet velit nec enim imperdiet vehicula. | Ut bibendum vestibulum quam, eu egestas turpis gravida nec | Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien |
-
-## Code Blocks
-
-#### Code block with backticks
-
-```html
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
+### 三级标题
 ```
 
-#### Code block indented with four spaces
+## 引用块
 
-    <!doctype html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
+`> 内容`为引用块，用于引用内容。
 
-#### Code block with Hugo's internal highlight shortcode
-{{< highlight html >}}
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
-{{< /highlight >}}
+> 引用块
+> > 🪆 套娃引用块
 
-#### Diff code block
-
-```diff
-[dependencies.bevy]
-git = "https://github.com/bevyengine/bevy"
-rev = "11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13"
-- features = ["dynamic"]
-+ features = ["jpeg", "dynamic"]
+```markdown
+> 引用块
+> >> 🪆 套娃引用块
 ```
 
-## List Types
+## 代码块与代码段
 
-#### Ordered List
+`代码块`。
 
-1. First item
-2. Second item
-3. Third item
+```markdown
+代码段
+```
 
-#### Unordered List
+````markdown
+`代码块`。
 
-* List item
-* Another item
-* And another item
+# 其中“java”为代码块语言，可以替换。
 
-#### Nested list
+```java
+System.out.println("Hello, World!");
+```
+````
 
-* Fruit
-  * Apple
-  * Orange
-  * Banana
-* Dairy
-  * Milk
-  * Cheese
+## 字体样式
 
-## Other Elements — abbr, sub, sup, kbd, mark
+### 斜体
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+`*斜体*`
+_斜体_
 
-H<sub>2</sub>O
+### 粗体
 
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+`**粗体**`
 
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
+**粗体**
 
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+### 删除线
 
-## Hyperlinked image
+`~~删除线内容~~`
 
-[![Google](https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png)](https://google.com)
+~~删除线内容~~
+
+### 下划线
+
+`<u>下划线内容</u>`
+
+<u>下划线内容</u>
+
+### 文本高亮
+
+`==内容==`
+
+==内容==
+
+### 文本上下标
+
+我是文本^我是上标^
+
+我是文本~我是下标~
+
+```markdown
+我是文本^我是上标^
+
+我是文本~我是下标~
+```
+
+## 分隔符
+
+```markdown
+---
+```
+
+---
+
+## 表格
+
+最上一排就是表头，需要在左右使用|表示这是一个表格，同时，下方需要添加分割线，分割线使用-减号表示。
+
+| 一  | 二  | 三  | 四  | 五  |
+| --- | --- | --- | --- | --- |
+| 1   | 2   | 3   | 4   | 5   |
+
+```markdown
+| 一  | 二  | 三  | 四  | 五  |
+| --- | --- | --- | --- | --- |
+| 1   | 2   | 3   | 4   | 5   |
+```
+
+其中：
+
+- `:---` 为左对齐
+- `:---:` 为剧中对齐
+- `---:` 为右对齐
+
+|  一 |  二 | 三  | 四  | 五  |
+| --: | --: | :-: | :-- | :-- |
+|   1 |   2 |  3  | 4   | 5   |
+
+```markdown
+|  一 |  二 | 三  | 四  | 五  |
+| --: | --: | :-: | :-- | :-- |
+|   1 |   2 |  3  | 4   | 5   |
+```
+
+## 有序列表
+
+输入当前序号后按退格键（Tab）可以变为子序号。
+
+1. 一
+   1. 二
+      1. 三
+         1. 四
+
+```markdown
+1. 一
+   1. 二
+      1. 三
+         1. 四
+```
+
+## 无序列表
+
+用法与有序列表类似。
+
+- 一
+  - 二
+    - 三
+      - 四
+
+```markdown
+- 一
+  - 二
+    - 三
+      - 四
+```
+
+## 勾选框
+
+- [ ] 我是未完成的任务
+- [x] 我是已完成的任务
+
+```markdown
+- [ ] 我是未完成的任务
+- [x] 我是已完成的任务
+```
+
+## 图片插入
+
+html 写法
+`<img src="图片路径" width=200 heigth=200>`
+
+<img src="markdownsyntax-corver.png" width=200 heigth=200>
+
+markdown 写法，这种写法无法主动修改图片尺寸。
+
+`![图片描述](图片地址 "图片名称，可选")`
+
+![StarWars](markdownsyntax-corver.png "123")
+
+## 链接
+
+`[链接文本](链接地址)`
+
+[有问题请百度](https://baidu.com)
+
+## 脚注
+
+java[^1]是世界上最好的语言。
+[^1]:世界上最好的语言。
+
+```markdwon
+java[^1]是世界上最好的语言。
+[^1]:世界上最好的语言。
+```
+
+## 数学公式
+
+### 公式块
+
+需要编写数学公式，我们同样需要在特定的块中编写，公式块使用`$`美元符表示。多行公式使用连续的两个美元符：
+$$
+我是公式
+$$
+
+```markdown
+$$
+我是公式
+$$
+```
+
+如果只想在行内编写，一行内容只需要使用一个美元符囊括即可：
+
+$ x = 17 + y $
+
+```markdown
+$ x = 17 + y $ 
+```
+
+### 特殊数学符号
+
+|         代码         |      符号       |       描述       |
+| :------------------: | :-------------: | :--------------: |
+|        \not=         |     **\\**=     |      不等于      |
+|       \approx        |        ≈        |      约等于      |
+|        \times        |        ×        |       乘号       |
+|         \div         |        ÷        |       除号       |
+|         \leq         |        ≤        |     小于等于     |
+|         \geq         |        ≥        |     大于等于     |
+|         \pm          |        ±        |      正负号      |
+|         \sum         |        ∑        | 求和符号（累加） |
+|        \prod         |        ∏        |       累乘       |
+|       \coprod        |        ∐        |       累除       |
+| \overline{a + b + c} | *a*+*b*+*c* / 3 |      平均值      |
+
+数学中常见特殊字符：
+
+|   代码   | 符号 |  代码  | 符号 |
+| :------: | :--: | :----: | :--: |
+|  \alpha  | *α*  | \beta  | *β*  |
+|  \gamma  | *γ*  | \delta | *δ*  |
+| \epsilon | *ϵ*  |  \eta  |  η*  |
+|  \theta  | *θ*  |  \pi   | *π*  |
+|  \omega  | *ω*  |  \rho  | *ρ*  |
+|  \sigma  | *σ*  |  \mu   | *μ*  |
+
+常见的三角函数：
+
+| 代码  | 符号 | 描述 |
+| :---: | :--: | :--: |
+| \sin  | sin  | 正弦 |
+| \cos  | cos⁡  | 余弦 |
+| \tan  | tan⁡  | 正切 |
+| \cot  | cot⁡  | 余切 |
+| \sec  | sec⁡  | 正割 |
+| \csc  | csc⁡  | 余割 |
+| \circ |  ∘   |  度  |
+
+积分和求导相关：
+
+|  代码   | 符号 |   描述   |
+| :-----: | :--: | :------: |
+| \infty  |  ∞   |   无穷   |
+|  \int   |  ∫   |  定积分  |
+|  \iint  |  ∬   | 双重积分 |
+| \iiint  |  ∭   | 三重积分 |
+|  \oint  |  ∮   | 曲线积分 |
+| x\prime |  x′  |   求导   |
+|  \lim   | lim⁡  |   极限   |
+
+集合相关：
+
+|   代码    | 符号 |  描述  |
+| :-------: | :--: | :----: |
+| \emptyset |  ∅   |  空集  |
+|    \in    |  ∈   |  属于  |
+|  \notin   |  ∉   | 不属于 |
+|  \supset  |  ⊃   | 真包含 |
+| \supseteq |  ⊇   |  包含  |
+|  \bigcap  |  ⋂   |  交集  |
+|  \bigcup  |  ⋃   |  并集  |
+
+对数函数相关：
+
+| 代码 | 符号 |        描述        |
+| :--: | :--: | :----------------: |
+| \log | log⁡  |      对数函数      |
+| \ln  |  ln⁡  | 以e为底的对数函数  |
+| \lg  |  lg⁡  | 以10为底的对数函数 |
+
+### 分数
+
+分数使用`\farc`来表示。
+
+`$ \frac{分子}{分母} $`
+
+### 开方
+
+开方使用`\sqrt`来表示。
+
+`$\sqrt{4}$`
+
+如果需要修改根号上方数值，可以添加中括号。
+
+`$\sqrt[3]{8}$`
+
+## html 标签
+
+markdown 支持 html 标签，可以更加个性化的自定义内容。
+
+例如：
+
+````markdwon
+<iframe src="https://limincai.github.io/" height="1080"
+width="1080" sandbox="allow-scripts" scrolling="yes"></iframe
+````
+
+<iframe src="https://limincai.github.io/" height="1080" 
+width="1080" sandbox="allow-scripts" scrolling="yes"></iframe```
