@@ -3,7 +3,7 @@ title: "Markdown 语法"
 description: "Markdown 基础语法，快速入门。"
 tags: ["markdown"]
 date: 2024-09-22T20:11:03+08:00
-image: "markdownsyntax-corver.png"
+image: "markdown-synatax-cover.webp"
 math: true
 hidden: false
 draft: true
@@ -186,13 +186,13 @@ _斜体_
 html 写法
 `<img src="图片路径" width=200 heigth=200>`
 
-<img src="/Users/limincai/code/hugo-blog/content/post/markdown-syntax/markdownsyntax-corver.png" width=200 heigth=200>
+<img src="markdown-synatax-cover.webp" width=200 heigth=200>
 
 markdown 写法，这种写法无法主动修改图片尺寸。
 
 `![图片描述](图片地址 "图片名称，可选")`
 
-![StarWars](/Users/limincai/code/hugo-blog/content/post/markdown-syntax/markdownsyntax-corver.png "123")
+![markdown](markdown-synatax-cover.webp "123")
 
 ## 链接
 
@@ -327,11 +327,11 @@ $\sqrt[3]{8}$
 
 `^` 表示上标，`_`表示下标。
 
-$ x*_下标 $
+$ x_下标 $
 
  $ x^上标 $
 
- $ x^上标_*下标 $
+ $ x^上标_下标 $
 
 ~~~markdown
 $ x_下标 $
@@ -345,7 +345,7 @@ $ x*_{下标} $
 
 $ x^{上标} $ 
 
-$ x^{上标}_*{下标} $
+$ x^{上标}_{下标} $
 
 ~~~markdown
 $ x_{下标} $
@@ -355,15 +355,15 @@ $ x^{上标}_{下标} $
 
 ### 积分
 
-`$\int_积分下限^积分上限xdx $*`
+`$\int_积分下限^积分上限xdx $
 
-$\int_1^2xdx $*
+$\int_1^2xdx $
 
 ### 极限
 
-`$ \lim_{n\rightarrow+\infty}\frac{1}{n + 1} $*`
+`$ \lim_{n\rightarrow+\infty}\frac{1}{n + 1} $`
 
-$ \lim_{n\rightarrow+\infty}\frac{1}{n + 1} $*
+$ \lim_{n\rightarrow+\infty}\frac{1}{n + 1} $
 
 ### 其他符号
 
