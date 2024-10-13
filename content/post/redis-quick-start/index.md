@@ -464,3 +464,65 @@ ZDIFF destination numkeys key1 [key2...]
 ~~~
 
 ## 高级数据结构
+
+### Geospatial 
+
+#### 应用场景
+
+- 附近搜索：地理位置服务应用（如打车软件、外卖平台）可以利用 Redis 的地理空间索引来快速找到用户附近的司机或餐馆。
+- 路线规划与距离计算：对于需要进行路径规划或者距离计算的应用程序，如物流配送系统，可以利用`GEODIST`命令来获取两个地理位置之间的距离。
+- 基于位置的广告推送：零售业可以利用地理信息向顾客推送附近店铺的促销信息。例如，在商场区域内发送优惠券给进入该区域的顾客。
+
+#### 基本操作
+
+~~~cmd
+# 添加一个或多个元素对应的经纬度信息到 GEO 中
+GEOADD key longitude1 latitude1 member1 [longitude2 latitude2 member2...]
+
+# 返回给定元素的经纬度信息
+GEOPOS key member1 [member2...]
+
+# 计算两个位置之间的距离
+GEODIST key member1 member2 [m|km|ft|mi]
+
+# 返回一个多多个位置对象的 geohash 值
+GEOHASH key member1 [member2...]
+
+# 根据给定的经纬度坐标来获取指定范围内的地理位置集合
+GEORADIUS key longitude latitude radius [m|km|ft|mi]
+
+# 根据存储在位置集合里面的某个地点获取指定范围内的地理位置集合
+GEORADIUSBYMEMBER key member radius [m|km|ft|mi]
+~~~
+
+#### Java 代码测试
+
+~~~java
+@Test
+    void testGeo() {
+        // 添加一个或多个元素对应的经纬度信息到 GEO 中
+        redisTemplate.opsForGeo().add("cities", new Point(-73.935242, 40.73061), "New York");
+        redisTemplate.opsForGeo().add("cities", new Point(-0.127758, 51.507351), "London");
+        redisTemplate.opsForGeo().add("cities", new Point(116.407526, 39.90403), "Beijing");
+        // 返回给定元素的经纬度信息
+        List<Point> position = redisTemplate.opsForGeo().position("cities", "New York", "London");
+        System.out.println(position);
+        // 计算两个位置之间的距离
+        Distance distance = redisTemplate.opsForGeo().distance("cities", "New York", "London", RedisGeoCommands.DistanceUnit.KILOMETERS);
+        System.out.println(distance);
+        System.out.println(distance.getValue());
+        // 返回一个多多个位置对象的 geohash 值
+        List<String> hash = redisTemplate.opsForGeo().hash("cities", "New York", "London");
+        System.out.println(hash);
+        // 根据给定的经纬度坐标来获取指定范围内的地理位置集合
+        Circle circle = new Circle(-73.935242, 40.73061, Metrics.KILOMETERS.getMultiplier());
+        RedisGeoCommands.GeoRadiusCommandArgs args = RedisGeoCommands.GeoRadiusCommandArgs.newGeoRadiusArgs()
+                .includeDistance() //包含距离
+                .includeCoordinates() //包含坐标
+                .sortAscending() //升序
+                .limit(50);
+        GeoResults<RedisGeoCommands.GeoLocation<Object>> byxy = redisTemplate.opsForGeo().radius("cities", circle, args);
+        byxy.forEach(r -> System.out.println(r));
+    }
+~~~
+
