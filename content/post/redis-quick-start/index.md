@@ -11,7 +11,7 @@ draft: true
 
 文档参考：[Redis 官方文档](https://redis.io/docs/latest/develop/get-started/)
 
-## SpringBoot 项目连接 Redis
+## SpringBoot 项目使用 Redis
 
 ### 依赖引入
 
