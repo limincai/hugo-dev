@@ -1,7 +1,7 @@
 ---
 title: "Redis 解决缓存穿透、缓存击穿和缓存雪崩"
 description: "Redis 在 SpringBoot 项目入解决缓存穿透、缓存击穿和缓存雪崩三种常见问题。"
-tags: ["Redis","Redis 应用"]
+tags: ["Redis"]
 categories: ["Redis"]
 date: 2024-10-13T21:47:45+08:00
 image: "redis-hcjc-cover.png"

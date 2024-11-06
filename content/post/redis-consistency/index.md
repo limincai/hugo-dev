@@ -1,7 +1,7 @@
 ---
 title: "Redis 解决数据一致性问题"
 description: "解决在 Java 中 Redis 与 Mysql 数据库一致性问题。" 
-tags: ["Redis","Redis 应用"]
+tags: ["Redis"]
 categories: ["Redis"]
 date: 2024-10-20T21:12:22+08:00
 image: "redis-consistency-cover.png"
