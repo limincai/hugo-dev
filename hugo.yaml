@@ -37,7 +37,7 @@ services:
 
 # 每页文章个数
 pagination:
-  pagerSize: 4
+  pagerSize: 5
 
 permalinks:
   post: /p/:slug/
