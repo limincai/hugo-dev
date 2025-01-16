@@ -4,7 +4,7 @@ description: "作为一名编程爱好者，对于编程的一些思考。"
 date: 2024-11-28T11:09:50+08:00
 image: "about-program-cover.jpg"
 hidden: false
-draft: true
+draft: tru
 ---
 
 
